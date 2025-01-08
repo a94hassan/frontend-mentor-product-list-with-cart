@@ -1,12 +1,60 @@
 body {
+  margin: 0;
   font-family: 'Red Hat Text', sans-serif;
+  background-color: green;
+  display: flex;
+  justify-content: center;
 }
 
-.attribution { 
+main {
+  border: blue dotted 2px;
+  box-sizing: border-box;
+  display: flex;
+  width: 1440px;
+  background-color: hsl(20, 50%, 98%);
+  padding: 64px 112px;
+}
+
+.desserts {
+  border: red dotted 2px;
+  flex: 1;
+}
+
+.desserts h1 {
+  font-size: 32px;
+  margin: 16px 0px;
+  color: hsl(14, 65%, 9%);
+}
+
+#desserts {
+  border: yellow dotted 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.dessert {
+  border: violet dotted 2px;
+  width: 248px;
+  height: 248px;
+}
+
+.cart {
+  border: green dotted 2px;
+  width: 368px;
+}
+
+.cart h3 {
+  font-size: 20px;
+  color: hsl(14, 86%, 42%);
+}
+
+
+/* .attribution { 
   font-size: 11px;
   text-align: center; 
 }
 
 .attribution a { 
   color: hsl(228, 45%, 44%); 
-}
+} */
