@@ -36,7 +36,61 @@ main {
 .dessert {
   border: violet dotted 2px;
   width: 248px;
-  height: 248px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  border-radius: 8px;
+}
+
+.add-to-cart {
+  display: flex;
+  justify-content: center;
+}
+
+.add-to-cart button {
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: hsl(14, 65%, 9%);
+  border: hsl(12, 20%, 44%) 1px solid;
+  height: 40px;
+  padding: 20px 24px;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -20px;
+  margin-bottom: 16px;
+  transition: all 75ms ease-in-out;
+}
+
+.add-to-cart button:hover {
+  scale: 0.98;
+  border: hsl(14, 86%, 42%) 1px solid;
+  color: hsl(14, 86%, 42%);
+  cursor: pointer;
+}
+
+.add-to-cart button:active {
+  scale: 0.94;
+}
+
+.category {
+  font-size: 14px;
+  color: hsl(12, 20%, 44%);
+}
+
+.dessert h4 {
+  margin: 4px 0px;
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+}
+
+.price {
+  font-weight: 600;
+  color: hsl(14, 86%, 42%);
 }
 
 .cart {
