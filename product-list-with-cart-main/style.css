@@ -21,7 +21,7 @@ main {
 }
 
 .desserts h1 {
-  font-size: 32px;
+  font-size: 40px;
   margin: 16px 0px;
   color: hsl(14, 65%, 9%);
 }
@@ -95,12 +95,32 @@ main {
 
 .cart {
   border: green dotted 2px;
+  box-sizing: border-box;
+  height: min-content;
   width: 368px;
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
 }
 
-.cart h3 {
-  font-size: 20px;
+.cart h2 {
+  font-size: 24px;
   color: hsl(14, 86%, 42%);
+  margin-top: 0;
+  margin-bottom: 32px
+}
+
+#cart-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cart-content span {
+  color: hsl(12, 20%, 44%);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 16px 0px;
 }
 
 
