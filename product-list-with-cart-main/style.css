@@ -82,9 +82,10 @@ main {
   color: hsl(12, 20%, 44%);
 }
 
-.dessert h4 {
+.dessert h3 {
   margin: 4px 0px;
   font-weight: 600;
+  font-size: 16px;
   color: hsl(14, 65%, 9%);
 }
 
@@ -116,13 +117,59 @@ main {
   align-items: center;
 }
 
-#cart-content span {
+.empty-cart-text {
   color: hsl(12, 20%, 44%);
   font-weight: 600;
   font-size: 14px;
   margin: 16px 0px;
 }
 
+.cart-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: hsl(13, 31%, 94%) 1px solid;
+  margin-bottom: 16px;
+}
+
+.cart-item h4 {
+  margin: 0;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: hsl(14, 65%, 9%);
+}
+
+.price-line {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.price-line span:first-child {
+  color: hsl(14, 86%, 42%);
+  font-weight: 600;
+  padding-right: 8px;
+}
+
+.price-line span:nth-child(2) {
+  color: hsl(12, 20%, 44%);
+  font-weight: 400;
+}
+
+.price-line span:last-child {
+  color: hsl(12, 20%, 44%);
+  font-weight: 600;
+}
+
+.cart-item img {
+  height: min-content;
+  border: hsl(14, 25%, 72%) solid 1.5px;
+  border-radius: 50%;
+  padding: 2px;
+}
 
 /* .attribution { 
   font-size: 11px;
