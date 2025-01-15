@@ -44,36 +44,86 @@ main {
   border-radius: 8px;
 }
 
+.highlight-border {
+  outline: 2px hsl(14, 86%, 42%) solid;
+}
+
 .add-to-cart {
   display: flex;
   justify-content: center;
 }
 
-.add-to-cart button {
+.add-btn {
+  box-sizing: border-box;
   font-family: 'Red Hat Text', sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: hsl(14, 65%, 9%);
-  border: hsl(12, 20%, 44%) 1px solid;
+  border: hsl(7, 20%, 60%) 1px solid;
   height: 40px;
-  padding: 20px 24px;
+  width: 160px;
   border-radius: 48px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-top: -20px;
   margin-bottom: 16px;
   transition: all 75ms ease-in-out;
 }
 
-.add-to-cart button:hover {
+.add-btn:hover {
   scale: 0.98;
   border: hsl(14, 86%, 42%) 1px solid;
   color: hsl(14, 86%, 42%);
   cursor: pointer;
 }
 
-.add-to-cart button:active {
+.add-btn:active {
+  scale: 0.94;
+}
+
+.quantity-control {
+  box-sizing: border-box;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  background-color: hsl(14, 86%, 42%);
+  height: 40px;
+  width: 160px;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -20px;
+  margin-bottom: 16px;
+  padding: 0px 12px;
+}
+
+.quantity-control button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: white 1px solid;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  transition: all 75ms ease-in-out;
+}
+
+.quantity-control button:hover {
+  cursor: pointer;
+  background-color: white;
+  scale: 1.2;
+}
+
+.quantity-control button:hover img {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(96%) saturate(5403%) hue-rotate(18deg) brightness(94%) contrast(88%);
+}
+
+.quantity-control button:active {
   scale: 0.94;
 }
 
@@ -169,6 +219,17 @@ main {
   border: hsl(14, 25%, 72%) solid 1.5px;
   border-radius: 50%;
   padding: 2px;
+  transition: all 75ms ease-in-out;
+}
+
+.cart-item img:hover {
+  filter: brightness(0%);
+  cursor: pointer;
+  scale: 1.2;
+}
+
+.cart-item img:active {
+  scale: 0.94;
 }
 
 /* .attribution { 

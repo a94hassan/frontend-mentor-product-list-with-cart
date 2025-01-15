@@ -22,9 +22,9 @@ function render() {
     let formattedPrice = formatPrice(dessert.price);
     desserts.innerHTML += /*html*/`
       <div class="dessert">
-        <img src= ${dessert.image.desktop} alt= ${dessert.name} class="image">
-        <div class="add-to-cart">
-          <button onclick="addToCart(${i})"><img src="./assets/images/icon-add-to-cart.svg" alt="shopping cart with a plus in it">Add to Cart</button>
+        <img src= ${dessert.image.desktop} alt= ${dessert.name} class="image" id="image-${i}">
+        <div class="add-to-cart" id="quantity-control-${i}">
+          <button class="add-btn" onclick="addToCart(${i}), changeButtonStyle(${i})"><img src="./assets/images/icon-add-to-cart.svg" alt="shopping cart with a plus in it">Add to Cart</button>
         </div>
         <span class="category">${dessert.category}</span>
         <h3>${dessert.name}</h3>
@@ -36,17 +36,6 @@ function render() {
 
 function formatPrice(price) {
   return `$${price.toFixed(2)}`;
-}
-
-function addToCart(i) {
-  let itemInCart = cart.find(item => item.name === dataset[i].name);
-  if (itemInCart) {
-    itemInCart.quantity++;
-  } else {
-    cart.push({ ...dataset[i], quantity: 1 });
-  }
-  console.table(cart);
-  renderCart();
 }
 
 function renderCart() {
@@ -73,11 +62,65 @@ function renderCart() {
               <span>${formattedCalculatedPrice}</span>
             </div>
           </div>
-          <img src="./assets/images/icon-remove-item.svg" alt="light brown x">
+          <img src="./assets/images/icon-remove-item.svg" alt="light brown x" onclick="removeFromCart(${i})">
         </div>
       `;
     }
   }
 }
 
+function addToCart(i) {
+  cart.push({ ...dataset[i], quantity: 1 });
+  renderCart();
+  toggleHighlightBorder(i);
+}
 
+function removeFromCart(i) {
+  let index = dataset.findIndex(data => data.name === cart[i].name);
+  toggleHighlightBorder(index);
+  resetButtonStyle(i);
+  cart.splice(i, 1);
+  renderCart();
+}
+
+function changeButtonStyle(i) {
+  let quantityControl = document.getElementById(`quantity-control-${i}`);
+  let itemInCart = cart.find(item => item.name === dataset[i].name);
+  quantityControl.innerHTML = /*html*/`
+    <div class="quantity-control">
+      <button onclick="decreaseQuantity(${i})"><img src="./assets/images/icon-decrement-quantity.svg" alt="minus symbol"></button>
+      <span>${itemInCart.quantity}</span>
+      <button onclick="increaseQuantity(${i})"><img src="./assets/images/icon-increment-quantity.svg" alt="plus symbol"></button>
+    </div>
+  `;
+}
+
+function resetButtonStyle(i) {
+  let index = dataset.findIndex(item => item.name === cart[i].name);
+  let quantityControl = document.getElementById(`quantity-control-${index}`);
+  quantityControl.innerHTML = /*html*/`
+    <button class="add-btn" onclick="addToCart(${index}), changeButtonStyle(${index})"><img src="./assets/images/icon-add-to-cart.svg" alt="shopping cart with a plus in it">Add to Cart</button>
+  `;
+}
+
+function toggleHighlightBorder(i) {
+  document.getElementById(`image-${i}`).classList.toggle('highlight-border');
+}
+
+function increaseQuantity(i) {
+  let itemInCart = cart.find(item => item.name === dataset[i].name);
+  itemInCart.quantity++;
+  changeButtonStyle(i);
+  renderCart();
+}
+
+function decreaseQuantity(i) {
+  let index = cart.findIndex(item => item.name === dataset[i].name);
+  if (cart[index].quantity > 1) {
+    cart[index].quantity--;
+    changeButtonStyle(i);
+    renderCart();
+  } else {
+    removeFromCart(index);
+  }
+}
