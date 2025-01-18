@@ -67,6 +67,7 @@ function renderCart() {
       `;
     }
   }
+  cartCounter();
 }
 
 function addToCart(i) {
@@ -123,4 +124,13 @@ function decreaseQuantity(i) {
   } else {
     removeFromCart(index);
   }
+}
+
+function cartCounter() {
+  let count = 0;
+  for (let i = 0; i < cart.length; i++) {
+    let item = cart[i];
+    count += item.quantity;
+  }
+  console.log(count);
 }
