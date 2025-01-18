@@ -132,5 +132,10 @@ function cartCounter() {
     let item = cart[i];
     count += item.quantity;
   }
-  console.log(count);
+  setCartCount(count);
+}
+
+function setCartCount(i) {
+  let cartCount = document.getElementById('cart-count');
+  cartCount.innerHTML = `Your Cart (${i})`;
 }
