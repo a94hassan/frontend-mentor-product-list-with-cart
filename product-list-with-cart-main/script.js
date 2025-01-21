@@ -66,6 +66,19 @@ function renderCart() {
         </div>
       `;
     }
+    cartContent.innerHTML += /*html*/`
+      <div class="cart-bottom">
+        <div>
+          <span>Order Total</span>
+          <span>$XXX</span>
+        </div>
+        <div>
+          <img src="./assets/images/icon-carbon-neutral.svg" alt="">
+          <span>This is a <strong>carbon-neutral</strong> delivery</span>
+        </div>
+        <button>Confirm Order</button>
+      </div>
+    `;
   }
   cartCounter();
 }

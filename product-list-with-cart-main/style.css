@@ -148,7 +148,7 @@ main {
   border: green dotted 2px;
   box-sizing: border-box;
   height: min-content;
-  width: 368px;
+  width: 382px;
   background-color: white;
   padding: 24px;
   border-radius: 8px;
@@ -229,6 +229,60 @@ main {
 }
 
 .cart-item img:active {
+  scale: 0.94;
+}
+
+.cart-bottom {
+  color: hsl(14, 65%, 9%);
+  font-size: 14px;
+  width: 100%;
+}
+
+.cart-bottom div:first-of-type {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0px;
+  margin-bottom: 16px;
+}
+
+.cart-bottom div:first-of-type span:last-of-type {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cart-bottom div:last-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: hsl(13, 31%, 94%);
+  padding: 16px 0px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.cart-bottom button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 32px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Red Hat Text', sans-serif;
+  background-color: hsl(14, 86%, 42%);
+  transition: all 75ms ease-in-out;
+}
+
+.cart-bottom button:hover {
+  scale: 0.98;
+  cursor: pointer;
+  filter: brightness(80%);
+}
+
+.cart-bottom button:active {
   scale: 0.94;
 }
 
