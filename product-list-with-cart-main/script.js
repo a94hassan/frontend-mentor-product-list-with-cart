@@ -70,7 +70,7 @@ function renderCart() {
       <div class="cart-bottom">
         <div>
           <span>Order Total</span>
-          <span>$XXX</span>
+          <span id="total-price"></span>
         </div>
         <div>
           <img src="./assets/images/icon-carbon-neutral.svg" alt="">
@@ -79,6 +79,7 @@ function renderCart() {
         <button>Confirm Order</button>
       </div>
     `;
+    calcTotal();
   }
   cartCounter();
 }
@@ -151,4 +152,19 @@ function cartCounter() {
 function setCartCount(i) {
   let cartCount = document.getElementById('cart-count');
   cartCount.innerHTML = `Your Cart (${i})`;
+}
+
+function calcTotal() {
+  let total = 0;
+  for (let i = 0; i < cart.length; i++) {
+    let item = cart[i];
+    total += item.price * item.quantity;
+  }
+  setTotalPrice(total);
+}
+
+function setTotalPrice(i) {
+  let total = document.getElementById('total-price');
+  let formattedTotalPrice = formatPrice(i);
+  total.innerHTML = formattedTotalPrice;
 }
