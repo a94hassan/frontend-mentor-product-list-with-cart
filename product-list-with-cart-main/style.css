@@ -263,7 +263,7 @@ main {
   margin-bottom: 24px;
 }
 
-.cart-bottom button {
+.order-btn {
   width: 100%;
   padding: 16px;
   border: none;
@@ -276,13 +276,13 @@ main {
   transition: all 75ms ease-in-out;
 }
 
-.cart-bottom button:hover {
+.order-btn:hover {
   scale: 0.98;
   cursor: pointer;
   filter: brightness(80%);
 }
 
-.cart-bottom button:active {
+.order-btn:active {
   scale: 0.94;
 }
 

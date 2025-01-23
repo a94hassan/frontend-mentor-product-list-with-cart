@@ -76,7 +76,7 @@ function renderCart() {
           <img src="./assets/images/icon-carbon-neutral.svg" alt="">
           <span>This is a <strong>carbon-neutral</strong> delivery</span>
         </div>
-        <button>Confirm Order</button>
+        <button class="order-btn">Confirm Order</button>
       </div>
     `;
     calcTotal();
