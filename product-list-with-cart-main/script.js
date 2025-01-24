@@ -73,7 +73,7 @@ function renderCart() {
           <span id="total-price"></span>
         </div>
         <div>
-          <img src="./assets/images/icon-carbon-neutral.svg" alt="">
+          <img src="./assets/images/icon-carbon-neutral.svg" alt="green abstract tree symbol">
           <span>This is a <strong>carbon-neutral</strong> delivery</span>
         </div>
         <button class="order-btn" onclick="openModal()">Confirm Order</button>
