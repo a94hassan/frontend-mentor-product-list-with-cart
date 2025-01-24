@@ -76,7 +76,7 @@ function renderCart() {
           <img src="./assets/images/icon-carbon-neutral.svg" alt="">
           <span>This is a <strong>carbon-neutral</strong> delivery</span>
         </div>
-        <button class="order-btn">Confirm Order</button>
+        <button class="order-btn" onclick="openModal()">Confirm Order</button>
       </div>
     `;
     calcTotal();
@@ -167,4 +167,17 @@ function setTotalPrice(i) {
   let total = document.getElementById('total-price');
   let formattedTotalPrice = formatPrice(i);
   total.innerHTML = formattedTotalPrice;
+}
+
+function toggleModal() {
+  let modal = document.getElementById('modal');
+  modal.classList.toggle('d-none');
+}
+
+function openModal() {
+  toggleModal();
+}
+
+function closeModal() {
+  toggleModal();
 }
