@@ -175,9 +175,37 @@ function toggleModal() {
 }
 
 function openModal() {
+  renderOrder();
   toggleModal();
 }
 
 function closeModal() {
   toggleModal();
+}
+
+function renderOrder() {
+  let order = document.getElementById('order');
+  order.innerHTML = '';
+  for (let i = 0; i < cart.length; i++) {
+    let item = cart[i];
+    order.innerHTML += /*html*/`
+      <div>
+        <img src= ${item.image.thumbnail} alt= ${item.name}>
+        <div>
+          <span>${item.name}</span>
+          <div>
+            <span>${item.price}</span>
+            <span>${item.price}</span>
+          </div>
+        </div>
+        <span>${item.price*item.price}</span>
+      </div>
+    `;
+  }
+  order.innerHTML += /*html*/`
+    <div>
+      <span>Order Total</span>
+      <span>$XXX</span>
+    </div>
+  `;
 }
