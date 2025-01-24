@@ -286,7 +286,7 @@ main {
   scale: 0.94;
 }
 
-.modal {
+#modal {
   position: fixed;
   left: 50%;
   top: 50%;
