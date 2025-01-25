@@ -184,28 +184,33 @@ function closeModal() {
 }
 
 function renderOrder() {
+  let total = 0;
   let order = document.getElementById('order');
   order.innerHTML = '';
   for (let i = 0; i < cart.length; i++) {
     let item = cart[i];
+    total += item.price * item.quantity;
     order.innerHTML += /*html*/`
-      <div>
-        <img src= ${item.image.thumbnail} alt= ${item.name}>
+      <div class="order-item">
         <div>
-          <span>${item.name}</span>
-          <div>
-            <span>${item.price}</span>
-            <span>${item.price}</span>
+          <img src= ${item.image.thumbnail} alt= ${item.name}>
+          <div class="order-item-info">
+            <span>${item.name}</span>
+            <div>
+              <span>${item.quantity}x</span>
+              <span>@ ${formatPrice(item.price)}</span>
+            </div>
           </div>
         </div>
-        <span>${item.price*item.price}</span>
+        <span>${formatPrice(item.quantity*item.price)}</span>
       </div>
+      <div class="order-separator"></div>
     `;
   }
   order.innerHTML += /*html*/`
     <div>
       <span>Order Total</span>
-      <span>$XXX</span>
+      <span>${formatPrice(total)}</span>
     </div>
   `;
 }
