@@ -317,12 +317,12 @@ main {
   flex-direction: column;
 }
 
-.modal-content img {
+.modal-content > img {
   height: 48px;
   width: 48px;
 }
 
-.modal-content span:first-of-type {
+.modal-content > span:first-of-type {
   font-size: 40px;
   font-weight: 700;
   margin-top: 20px;
@@ -330,7 +330,7 @@ main {
   color: hsl(14, 65%, 9%);
 }
 
-.modal-content span:last-of-type {
+.modal-content > span:last-of-type {
   color: hsl(12, 20%, 44%);
 }
 
