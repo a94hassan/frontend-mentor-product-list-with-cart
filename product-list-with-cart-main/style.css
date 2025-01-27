@@ -194,17 +194,19 @@ main {
 
 .price-line {
   display: flex;
-  gap: 8px;
   font-size: 14px;
 }
 
 .price-line span:first-child {
+  display: inline-block;
+  min-width: 32px;
   color: hsl(14, 86%, 42%);
   font-weight: 600;
-  padding-right: 8px;
 }
 
 .price-line span:nth-child(2) {
+  display: inline-block;
+  min-width: 64px;
   color: hsl(12, 20%, 44%);
   font-weight: 400;
 }
