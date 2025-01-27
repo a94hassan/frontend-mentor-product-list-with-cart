@@ -19,7 +19,6 @@ function render() {
   desserts.innerHTML = '';
   for (let i = 0; i < dataset.length; i++) {
     let dessert = dataset[i];
-    let formattedPrice = formatPrice(dessert.price);
     desserts.innerHTML += /*html*/`
       <div class="dessert">
         <img src= ${dessert.image.desktop} alt= ${dessert.name} class="image" id="image-${i}">
@@ -28,7 +27,7 @@ function render() {
         </div>
         <span class="category">${dessert.category}</span>
         <h3>${dessert.name}</h3>
-        <span class="price">${formattedPrice}</span>
+        <span class="price">${formatPrice(dessert.price)}</span>
       </div>
     `;
   }
@@ -50,16 +49,14 @@ function renderCart() {
     for (let i = 0; i < cart.length; i++) {
       let item = cart[i];
       let calculatedPrice = item.quantity * item.price;
-      let formattedPrice = formatPrice(item.price);
-      let formattedCalculatedPrice = formatPrice(calculatedPrice);
       cartContent.innerHTML += /*html*/`
         <div class="cart-item">
           <div>
             <h4>${item.name}</h4>
             <div class="price-line">
               <span>${item.quantity}x</span>
-              <span>@ ${formattedPrice}</span>
-              <span>${formattedCalculatedPrice}</span>
+              <span>@ ${formatPrice(item.price)}</span>
+              <span>${formatPrice(calculatedPrice)}</span>
             </div>
           </div>
           <img src="./assets/images/icon-remove-item.svg" alt="light brown x" onclick="removeFromCart(${i})">
@@ -166,9 +163,8 @@ function calcTotal() {
 function setTotalPrice(i) {
   let total = document.getElementById('total-price');
   let orderTotal = document.getElementById('order-total');
-  let formattedTotalPrice = formatPrice(i);
-  total.innerHTML = formattedTotalPrice;
-  orderTotal.innerHTML = formattedTotalPrice;
+  total.innerHTML = formatPrice(i);
+  orderTotal.innerHTML = formatPrice(i);
 }
 
 function toggleModal() {
