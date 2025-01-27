@@ -165,8 +165,10 @@ function calcTotal() {
 
 function setTotalPrice(i) {
   let total = document.getElementById('total-price');
+  let orderTotal = document.getElementById('order-total');
   let formattedTotalPrice = formatPrice(i);
   total.innerHTML = formattedTotalPrice;
+  orderTotal.innerHTML = formattedTotalPrice;
 }
 
 function toggleModal() {
@@ -184,13 +186,11 @@ function closeModal() {
 }
 
 function renderOrder() {
-  let total = 0;
-  let order = document.getElementById('order');
-  order.innerHTML = '';
+  let orderContent = document.getElementById('order-content');
+  orderContent.innerHTML = '';
   for (let i = 0; i < cart.length; i++) {
     let item = cart[i];
-    total += item.price * item.quantity;
-    order.innerHTML += /*html*/`
+    orderContent.innerHTML += /*html*/`
       <div class="order-item">
         <div>
           <img src= ${item.image.thumbnail} alt= ${item.name}>
@@ -204,13 +204,6 @@ function renderOrder() {
         </div>
         <span>${formatPrice(item.quantity*item.price)}</span>
       </div>
-      <div class="order-separator"></div>
     `;
   }
-  order.innerHTML += /*html*/`
-    <div>
-      <span>Order Total</span>
-      <span>${formatPrice(total)}</span>
-    </div>
-  `;
 }

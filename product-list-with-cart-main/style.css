@@ -309,7 +309,7 @@ main {
   z-index: 2;
   box-sizing: border-box;
   width: 600px;
-  height: 680px;
+  max-height: 680px;
   background-color: white;
   border-radius: 16px;
   padding: 32px;
@@ -341,24 +341,51 @@ main {
   border-radius: 8px;
 }
 
-.order-separator {
-  box-shadow: 0 1.5px 0 hsla(14, 24%, 72%, 0.5);
-  height: 1px;
-  margin-top: 16px;
-  margin-bottom: 20px;
+#order-content {
+  max-height: 256px;
+  overflow-y: overlay;
+  scrollbar-gutter: stable;
+  margin-right: -16px;
+  padding-right: 8px;
+}
+
+#order-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+#order-content::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background: hsl(14, 25%, 72%);
+}
+
+#order-content::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: hsl(14, 86%, 42%);
 }
 
 .order-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 0.5px solid hsla(14, 24%, 72%, 0.2);
+  padding: 16px 0px;
+}
+
+.order-item:first-of-type {
+  padding-top: 0px;
+}
+
+.order-item:last-of-type {
+  border-bottom: none;
 }
 
 #order > div:last-of-type {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 0px;
+  padding-top: 20px;
+  padding-bottom: 4px;
+  border-top: 0.5px solid hsla(14, 24%, 72%, 0.2);
 }
 
 #order > div:last-of-type span:first-of-type {
