@@ -3,7 +3,8 @@ body {
   font-family: 'Red Hat Text', sans-serif;
   background-color: green;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 main {
@@ -11,6 +12,8 @@ main {
   box-sizing: border-box;
   display: flex;
   width: 1440px;
+  min-height: 100vh;
+  min-height: 100svh;
   background-color: hsl(20, 50%, 98%);
   padding: 64px 112px;
 }
