@@ -447,11 +447,22 @@ main {
   color: hsl(14, 65%, 9%);
 }
 
-/* .attribution { 
+footer {
+  border: orange dotted 2px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 1440px;
+  background-color: hsl(20, 50%, 98%);
+  padding: 16px 112px;
+}
+
+.attribution { 
+  color: hsl(14, 65%, 9%);
   font-size: 11px;
   text-align: center; 
 }
 
 .attribution a { 
-  color: hsl(228, 45%, 44%); 
-} */
+  color: hsl(14, 86%, 42%); 
+}
