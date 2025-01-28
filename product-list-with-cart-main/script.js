@@ -175,10 +175,12 @@ function toggleModal() {
 function openModal() {
   renderOrder();
   toggleModal();
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
   toggleModal();
+  document.body.style.overflow = 'unset';
 }
 
 function renderOrder() {
