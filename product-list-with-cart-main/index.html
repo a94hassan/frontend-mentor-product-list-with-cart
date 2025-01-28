@@ -25,8 +25,8 @@
       <h2 id="cart-count">Your Cart (X)</h2>
       <div id="cart-content"></div>
     </section>
-    <section id="modal" class="d-none">
-      <div class="modal-content">
+    <section id="modal" class="d-none" onclick="closeModal()">
+      <div class="modal-content" onclick="stopEventPropagation(event)">
         <img src="./assets/images/icon-order-confirmed.svg" alt="green checkmark in a circle">
         <span>Order Confirmed</span>
         <span>We hope you enjoy your food!</span>

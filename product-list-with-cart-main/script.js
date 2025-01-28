@@ -183,6 +183,10 @@ function closeModal() {
   document.body.style.overflow = 'unset';
 }
 
+function stopEventPropagation(event) {
+  event.stopPropagation();
+}
+
 function renderOrder() {
   let orderContent = document.getElementById('order-content');
   orderContent.innerHTML = '';
