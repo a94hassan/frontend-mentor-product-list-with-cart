@@ -536,3 +536,75 @@ footer {
     font-size: 14px;
   }
 }
+
+@media (max-width: 1160px) {
+  main {
+    padding: 48px 0px;
+    min-height: calc(100vh - 48px);
+    min-height: calc(100svh - 48px);
+  }
+
+  footer {
+    height: 48px;
+  }
+
+  .desserts h1 {
+    font-size: 32px;
+  }
+
+  #desserts {
+    gap: 16px;
+  }
+
+  .desserts {
+    max-width: 600px;
+  }
+
+  .dessert {
+    width: 180px;
+  }
+
+  .cart h2 {
+    font-size: 20px;
+  }
+
+  .cart-bottom div:first-of-type span:last-of-type {
+    font-size: 20px;
+  }
+
+  .cart-bottom div:last-of-type {
+    font-size: 12px;
+  }
+
+  .order-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .modal-content {
+    width: 480px;
+    max-height: 560px;
+  }
+
+  .modal-content > img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .modal-content > span:first-of-type {
+    font-size: 32px;
+    margin-top: 12px;
+  }
+
+  #order-content {
+    max-height: 168px;
+  }
+
+  #order {
+    margin: 24px 0px;
+  }
+
+  #order > div:last-of-type span:last-of-type {
+    font-size: 20px;
+  }
+}
