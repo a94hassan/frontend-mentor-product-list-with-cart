@@ -500,3 +500,39 @@ footer {
     height: 56px;
   }
 }
+
+@media (max-width: 1280px) {
+  .desserts {
+    max-width: 700px;
+  }
+
+  .dessert {
+    width: 200px;
+  }
+
+  .add-btn {
+    height: 32px;
+    width: 136px;
+    margin-top: -16px;
+    font-size: 12px;
+  }
+
+  .quantity-control {
+    height: 32px;
+    width: 136px;
+    margin-top: -16px;
+    font-size: 12px;
+  }
+
+  .category {
+    font-size: 13px;
+  }
+  
+  .dessert h3 {
+    font-size: 14px;
+  }
+  
+  .price {
+    font-size: 14px;
+  }
+}
