@@ -614,3 +614,15 @@ footer {
     max-width: 400px;
   }
 }
+
+@media (max-width: 900px) {
+  main {
+    padding: 32px 0px;
+    min-height: calc(100vh - 32px);
+    min-height: calc(100svh - 32px);
+  }
+
+  footer {
+    height: 32px;
+  }
+}
