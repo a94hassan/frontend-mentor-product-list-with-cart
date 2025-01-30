@@ -484,3 +484,19 @@ footer {
     width: 100%;
   }
 }
+
+@media (max-width: 1360px) {
+  main {
+    padding: 56px 0px;
+    min-height: calc(100vh - 56px);
+    min-height: calc(100svh - 56px);
+  }
+
+  .cart {
+    width: 320px;
+  }
+
+  footer {
+    height: 56px;
+  }
+}
