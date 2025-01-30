@@ -608,3 +608,9 @@ footer {
     font-size: 20px;
   }
 }
+
+@media (max-width: 1060px) {
+  .desserts {
+    max-width: 400px;
+  }
+}
