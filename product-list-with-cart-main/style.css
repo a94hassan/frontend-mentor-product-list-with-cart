@@ -467,3 +467,20 @@ footer {
 .attribution a { 
   color: hsl(14, 86%, 42%); 
 }
+
+
+@media (max-width: 1460px) {
+  main {
+    width: 100%;
+    padding: 64px 0px;
+    justify-content: center;
+  }
+
+  .desserts {
+    max-width: 824px;
+  }
+
+  footer {
+    width: 100%;
+  }
+}
