@@ -48,7 +48,6 @@ function renderCart() {
   } else {
     for (let i = 0; i < cart.length; i++) {
       let item = cart[i];
-      let calculatedPrice = item.quantity * item.price;
       cartContent.innerHTML += /*html*/`
         <div class="cart-item">
           <div>
@@ -56,7 +55,7 @@ function renderCart() {
             <div class="price-line">
               <span>${item.quantity}x</span>
               <span>@ ${formatPrice(item.price)}</span>
-              <span>${formatPrice(calculatedPrice)}</span>
+              <span>${formatPrice(item.quantity*item.price)}</span>
             </div>
           </div>
           <img src="./assets/images/icon-remove-item.svg" alt="light brown x" onclick="removeFromCart(${i})">
