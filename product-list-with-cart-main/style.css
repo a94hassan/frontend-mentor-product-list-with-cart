@@ -745,3 +745,41 @@ footer {
     font-size: 24px;
   }
 }
+
+@media (max-width: 650px) {
+  #desserts {
+    gap: 16px;
+  }
+
+  .dessert {
+    width: calc(50% - 8px);
+  }
+
+  .add-btn {
+    height: 32px;
+    width: 120px;
+    margin-top: -16px;
+    font-size: 12px;
+  }
+
+  .quantity-control {
+    height: 32px;
+    width: 120px;
+    margin-top: -16px;
+    font-size: 12px;
+  }
+
+  .modal-content {
+    width: 440px;
+    padding: 24px;
+  }
+
+  .modal-content > span:first-of-type {
+    font-size: 32px;
+  }
+
+  #order > div:last-of-type span:last-of-type {
+    font-size: 20px;
+  }
+}
+
