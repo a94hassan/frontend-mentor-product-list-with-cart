@@ -856,3 +856,33 @@ footer {
   }
 }
 
+@media (max-width: 400px) {
+  .desserts {
+    max-width: 84%;
+  }
+
+  .cart {
+    width: 84%;
+  }
+
+  .cart-item h4 {
+    font-size: 13px;
+  }
+  
+  .price-line {
+    font-size: 13px;
+  }
+
+  .price-line span:first-child {
+    min-width: 24px;
+  }
+  
+  .price-line span:nth-child(2) {
+    min-width: 56px;
+  }
+
+  .cart-bottom div:last-of-type {
+    font-size: 10px;
+    padding: 12px 0px;
+  }
+}
