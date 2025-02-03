@@ -642,6 +642,18 @@ footer {
     min-height: calc(100svh - 32px);
   }
 
+  .desserts {
+    max-width: 400px;
+  }
+
+  .dessert {
+    width: 180px;
+  }
+
+  .cart {
+    width: 320px;
+  }
+
   footer {
     height: 32px;
   }
