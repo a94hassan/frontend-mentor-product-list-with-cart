@@ -498,6 +498,11 @@ footer {
     width: 320px;
   }
 
+  .cart-bottom div:last-of-type {
+    font-size: 12px;
+    padding: 12px 0px;
+  }
+
   footer {
     height: 56px;
   }
