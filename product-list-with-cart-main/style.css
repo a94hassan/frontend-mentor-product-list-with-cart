@@ -37,6 +37,7 @@ main {
 }
 
 .dessert {
+  box-sizing: border-box;
   border: violet dotted 2px;
   width: 248px;
   display: flex;
