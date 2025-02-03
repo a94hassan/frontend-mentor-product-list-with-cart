@@ -658,3 +658,90 @@ footer {
     height: 32px;
   }
 }
+
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  #desserts {
+    gap: 24px;
+  }
+
+  .desserts {
+    flex: 1;
+    max-width: 80%;
+  }
+
+  .desserts h1 {
+    font-size: 40px;
+    margin-top: 0;
+  }
+
+  .dessert {
+    width: calc(50% - 12px);
+  }
+
+  .image {
+    aspect-ratio: 1.5 / 1;
+    object-fit: cover;
+  }
+
+  .add-btn {
+    height: 40px;
+    margin-top: -20px;
+    width: 136px;
+    font-size: 13px;
+  }
+
+  .quantity-control {
+    height: 40px;
+    margin-top: -20px;
+    width: 136px;
+    font-size: 13px;
+  }
+
+  .cart {
+    width: 80%;
+  }
+
+  .cart h2 {
+    font-size: 24px;
+  }
+
+  .cart-bottom div:first-of-type span:last-of-type {
+    font-size: 24px;
+  }
+
+  .cart-bottom div:last-of-type {
+    font-size: 14px;
+    padding: 14px 0px;
+  }
+
+  .order-btn {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .modal-content {
+    width: 480px;
+  }
+
+  .modal-content > span:first-of-type {
+    font-size: 40px;
+  }
+
+  .modal-content > span:last-of-type {
+    font-size: 14px;
+  }
+
+  .order-item-info {
+    font-size: 13px;
+  }
+
+  #order > div:last-of-type span:last-of-type {
+    font-size: 24px;
+  }
+}
