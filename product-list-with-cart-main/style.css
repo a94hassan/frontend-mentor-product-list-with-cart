@@ -524,6 +524,11 @@ footer {
     font-size: 12px;
   }
 
+  .add-btn img {
+    width: 18px;
+    height: 18px;
+  }
+
   .quantity-control {
     height: 32px;
     width: 120px;
