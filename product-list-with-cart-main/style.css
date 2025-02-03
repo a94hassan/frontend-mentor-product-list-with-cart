@@ -625,6 +625,14 @@ footer {
   .desserts {
     max-width: 440px;
   }
+
+  .dessert {
+    width: 200px;
+  }
+
+  .cart {
+    width: 382px;
+  }
 }
 
 @media (max-width: 900px) {
