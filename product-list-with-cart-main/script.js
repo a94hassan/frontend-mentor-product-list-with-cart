@@ -208,3 +208,10 @@ function renderOrder() {
     `;
   }
 }
+
+function reset() {
+  document.querySelectorAll('.highlight-border').forEach(item => item.classList.remove('highlight-border'));
+  cart.forEach((_, i) => resetButtonStyle(i));
+  cart = [];
+  renderCart();
+}
