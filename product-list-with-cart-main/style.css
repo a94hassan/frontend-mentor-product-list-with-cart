@@ -8,7 +8,6 @@ body {
 }
 
 main {
-  border: blue dotted 2px;
   box-sizing: border-box;
   display: flex;
   width: 1440px;
@@ -19,7 +18,6 @@ main {
 }
 
 .desserts {
-  border: red dotted 2px;
   flex: 1;
 }
 
@@ -30,7 +28,6 @@ main {
 }
 
 #desserts {
-  border: yellow dotted 2px;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -38,7 +35,6 @@ main {
 
 .dessert {
   box-sizing: border-box;
-  border: violet dotted 2px;
   width: 248px;
   display: flex;
   flex-direction: column;
@@ -149,7 +145,6 @@ main {
 }
 
 .cart {
-  border: green dotted 2px;
   box-sizing: border-box;
   height: min-content;
   width: 382px;
@@ -450,7 +445,6 @@ main {
 }
 
 footer {
-  border: orange dotted 2px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
