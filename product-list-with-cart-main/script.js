@@ -44,43 +44,55 @@ function renderCart() {
   let cartContent = document.getElementById('cart-content');
   cartContent.innerHTML = '';
   if (cart.length === 0) {
-    cartContent.innerHTML = /*html*/`
-      <img src="./assets/images/illustration-empty-cart.svg" alt="brown cake from which a piece is cut">
-      <span class="empty-cart-text">Your added items will appear here</span>
-    `;
+    cartContent.innerHTML = generateEmptyCartHTML();
   } else {
     for (let i = 0; i < cart.length; i++) {
       let item = cart[i];
-      cartContent.innerHTML += /*html*/`
-        <div class="cart-item">
-          <div>
-            <h4>${item.name}</h4>
-            <div class="price-line">
-              <span>${item.quantity}x</span>
-              <span>@ ${formatPrice(item.price)}</span>
-              <span>${formatPrice(item.quantity*item.price)}</span>
-            </div>
-          </div>
-          <img src="./assets/images/icon-remove-item.svg" alt="light brown x" onclick="removeFromCart(${i})">
-        </div>
-      `;
+      cartContent.innerHTML += generateCartHTML(i, item);
     }
-    cartContent.innerHTML += /*html*/`
-      <div class="cart-bottom">
-        <div>
-          <span>Order Total</span>
-          <span id="total-price"></span>
-        </div>
-        <div>
-          <img src="./assets/images/icon-carbon-neutral.svg" alt="green abstract tree symbol">
-          <span>This is a <strong>carbon-neutral</strong> delivery</span>
-        </div>
-        <button class="order-btn" onclick="openModal()">Confirm Order</button>
-      </div>
-    `;
+    cartContent.innerHTML += generateCartBottomHTML();
     calcTotal();
   }
   cartCounter();
+}
+
+function generateEmptyCartHTML() {
+  return /*html*/`
+    <img src="./assets/images/illustration-empty-cart.svg" alt="brown cake from which a piece is cut">
+    <span class="empty-cart-text">Your added items will appear here</span>
+  `;
+}
+
+function generateCartHTML(i, item) {
+  return /*html*/`
+    <div class="cart-item">
+      <div>
+        <h4>${item.name}</h4>
+        <div class="price-line">
+          <span>${item.quantity}x</span>
+          <span>@ ${formatPrice(item.price)}</span>
+          <span>${formatPrice(item.quantity*item.price)}</span>
+        </div>
+      </div>
+      <img src="./assets/images/icon-remove-item.svg" alt="light brown x" onclick="removeFromCart(${i})">
+    </div>
+  `;
+}
+
+function generateCartBottomHTML() {
+  return /*html*/`
+    <div class="cart-bottom">
+      <div>
+        <span>Order Total</span>
+        <span id="total-price"></span>
+      </div>
+      <div>
+        <img src="./assets/images/icon-carbon-neutral.svg" alt="green abstract tree symbol">
+        <span>This is a <strong>carbon-neutral</strong> delivery</span>
+      </div>
+      <button class="order-btn" onclick="openModal()">Confirm Order</button>
+    </div>
+  `;
 }
 
 function addToCart(i) {
