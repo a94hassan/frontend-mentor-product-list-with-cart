@@ -14,23 +14,26 @@ async function init() {
 
 
 function render() {
-  console.log(dataset);
   let desserts = document.getElementById('desserts');
   desserts.innerHTML = '';
   for (let i = 0; i < dataset.length; i++) {
     let dessert = dataset[i];
-    desserts.innerHTML += /*html*/`
-      <div class="dessert">
-        <img src= ${dessert.image.desktop} alt= ${dessert.name} class="image" id="image-${i}">
-        <div class="add-to-cart" id="quantity-control-${i}">
-          <button class="add-btn" onclick="addToCart(${i}), changeButtonStyle(${i})"><img src="./assets/images/icon-add-to-cart.svg" alt="shopping cart with a plus in it">Add to Cart</button>
-        </div>
-        <span class="category">${dessert.category}</span>
-        <h3>${dessert.name}</h3>
-        <span class="price">${formatPrice(dessert.price)}</span>
-      </div>
-    `;
+    desserts.innerHTML += generateDessertsHTML(i, dessert);
   }
+}
+
+function generateDessertsHTML(i, dessert) {
+  return /*html*/`
+    <div class="dessert">
+      <img src= ${dessert.image.desktop} alt= ${dessert.name} class="image" id="image-${i}">
+      <div class="add-to-cart" id="quantity-control-${i}">
+        <button class="add-btn" onclick="addToCart(${i}), changeButtonStyle(${i})"><img src="./assets/images/icon-add-to-cart.svg" alt="shopping cart with a plus in it">Add to Cart</button>
+      </div>
+      <span class="category">${dessert.category}</span>
+      <h3>${dessert.name}</h3>
+      <span class="price">${formatPrice(dessert.price)}</span>
+    </div>
+  `;
 }
 
 function formatPrice(price) {
