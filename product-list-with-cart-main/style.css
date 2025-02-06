@@ -349,7 +349,7 @@ main {
 
 #order-content {
   max-height: 256px;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-gutter: stable;
   margin-right: -16px;
   padding-right: 8px;
