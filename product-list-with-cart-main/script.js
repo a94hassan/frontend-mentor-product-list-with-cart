@@ -206,22 +206,26 @@ function renderOrder() {
   orderContent.innerHTML = '';
   for (let i = 0; i < cart.length; i++) {
     let item = cart[i];
-    orderContent.innerHTML += /*html*/`
-      <div class="order-item">
-        <div>
-          <img src= ${item.image.thumbnail} alt= ${item.name}>
-          <div class="order-item-info">
-            <span>${item.name}</span>
-            <div>
-              <span>${item.quantity}x</span>
-              <span>@ ${formatPrice(item.price)}</span>
-            </div>
+    orderContent.innerHTML += generateOrderHTML(item);
+  }
+}
+
+function generateOrderHTML(item) {
+  return /*html*/`
+    <div class="order-item">
+      <div>
+        <img src= ${item.image.thumbnail} alt= ${item.name}>
+        <div class="order-item-info">
+          <span>${item.name}</span>
+          <div>
+            <span>${item.quantity}x</span>
+            <span>@ ${formatPrice(item.price)}</span>
           </div>
         </div>
-        <span>${formatPrice(item.quantity*item.price)}</span>
       </div>
-    `;
-  }
+      <span>${formatPrice(item.quantity*item.price)}</span>
+    </div>
+  `;
 }
 
 function reset() {
